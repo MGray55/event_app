@@ -1,35 +1,8 @@
-var app = angular.module('eventApp', ['ngRoute', 'ngGrid']);
-
-app.config(function($routeProvider, $locationProvider){
-
-    $routeProvider.
-        when('/', {
-            templateUrl: 'views/main.html',
-            controller: 'MainCtrl'
-        }).
-       /* when('/edit', {
-            templateUrl: 'views/event_form.html',
-            controller: 'EditEventCtrl'
-        }).*/
-        when('/add', {
-            templateUrl: 'views/event_form.html',
-            controller: 'AddEventCtrl'
-        }).
-        /*when('/edit/:name', {
-            templateUrl: 'views/event_form.html',
-            controller: 'EditEventCtrl'
-        }).*/
-        otherwise({
-            redirectTo: 'views/notfound'
-        });
-    // enable html5Mode for pushstate ('#'-less URLs)
-   // $locationProvider.html5Mode(true);
-   // $locationProvider.hashPrefix('!');
-});//.run(function() {
-
-//});
-
-app.controller('MainCtrl', function ($scope, EventService, $location) {
+/**
+ * Created by Michael_Gray1 on 6/6/2014.
+ */
+angular.module('eventApp').controller('MainCtrl', function($scope, $rootScope, $location, $log, $routeParams) {
+    "use strict";
 
     /**
      *
@@ -108,11 +81,6 @@ app.controller('MainCtrl', function ($scope, EventService, $location) {
 
     $scope.isActiveTab = function (tabUrl) {
         return tabUrl == $scope.currentTab;
-    };
-
-    $scope.handleAddEvent = function (){
-        $location.path("/add");
-        //$location.path('/newValue');
     };
 
 

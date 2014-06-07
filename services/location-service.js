@@ -3,7 +3,6 @@
  * User: Mike Gray
  * Date: 6/5/14
  */
-
 angular.module('eventApp').factory('EventService', function($q) {
     /*
      * If the device can use geolocation services,
