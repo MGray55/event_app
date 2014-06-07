@@ -1,0 +1,69 @@
+<div class="container">
+    <div style="position: absolute; top: 2px;" class="menu">
+        <a href="" ng-click="goBack()">
+            <div>
+            <span class="backIcon" aria-hidden="true" data-icon="&#xe0cd;">
+                <span class="backIconType" ng-bind="title"></span>
+            </span>
+            </div>
+            <div class="back"></div>
+        </a>
+    </div>
+
+    <div class='content_canvas'>
+        <div class="content centerOnTablet">
+            <h1 class="title">Event Details</h1>
+
+            <div class="page searchFeeFreeWrapper" style="margin-bottom: 0px">
+                <label>Event Name</label>
+                <input type="search" style="text-transform: capitalize;"></input>
+            </div>
+
+            <div class="page searchFeeFreeWrapper" style="margin-bottom: 0px">
+                <label>Date</label>
+                <input type="search" style="text-transform: capitalize;"></input>
+            </div>
+
+            <div class="page searchFeeFreeWrapper" style="margin-bottom: 0px">
+                <label>Venue</label>
+                <input type="search" style="text-transform: capitalize;"></input>
+            </div>
+            <div class="page searchFeeFreeWrapper" style="margin-bottom: 0px">
+                <label>City</label>
+                <input type="search" style="text-transform: capitalize;"></input>
+            </div>
+<!--https://github.com/angular-ui/bootstrap/tree/master/src/datepicker-->
+<!--http://www.geobytes.com/free-ajax-cities-jsonp-api.htm-->
+            <div class="page searchFeeFreeWrapper">
+                <label>State</label>
+                <input type="search" ng-model="state.desc" style="text-transform: capitalize;"></input>
+            </div>
+
+            <div ng-show="noFilteredResults" ng-class='clearSearchStyle()'>
+                <h1 class="midfg medium nocase centerOnTablet">No Matches</h1>
+                <br/>
+                <a ng-click='clearSearch()'>
+                    <button>Clear</button>
+                </a>
+            </div>
+
+            <h1 class="title centerOnTablet" ng-hide="noFilteredResults">Select a state</h1>
+
+            <select ng-model="state" ng-options="state.desc for state in states">
+            </select>
+            <br/>
+
+            <div style="padding-bottom: 56px;">
+                <div ng-repeat="state in states | filter:state"
+                     ng-click="stateSelected(state)"
+                     ng-hide="noFilteredResults">
+                    <div class="transaction centerOnTablet"
+                         style="padding-top: 15px; padding-bottom: 15px; text-transform: capitalize;">
+                        {{ state.desc }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
