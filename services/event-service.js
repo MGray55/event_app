@@ -205,9 +205,11 @@ angular.module('eventApp').factory('EventService', function ($q, $filter) {
             return deferred.promise;
         },
         getNextUniqueID: function () {
+            //This is purely for demo purposes.
+            //We normally would not query the data source for the
+            //next available ID, but it would be generated on insert
+            //
             //Gets the next highest unique id available for insertion
-            //Could be part of the add() function, but placed here
-            //for demonstration purposes
             var deferred = $q.defer();
             var returnValue = 0;
             for (var x = 0; x < events.length; x++) {

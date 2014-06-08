@@ -1,5 +1,7 @@
 /**
  * Created by Michael_Gray1 on 6/6/2014.
+ * I am the controller for the edit action
+ * (Uses the same view as add new action)
  */
 angular.module('eventApp').controller('EditEventCtrl', function ($scope, $rootScope, EventService, $location, $log, $routeParams, StatesService) {
     "use strict";
@@ -22,27 +24,27 @@ angular.module('eventApp').controller('EditEventCtrl', function ($scope, $rootSc
 
     var id = null;
 
-    var setState = function (data){
-        if(data !== null &&  $scope.states !== null){
-            for(var x = 0; x <  $scope.states.length; x++){
-                if ($scope.states[x].code === data.venue.state){
-                    $scope.state = $scope.states[x];
+    var setState = function (data) {
+        if (data !== null && $scope.states !== null) {
+            for (var x = 0; x < $scope.states.length; x++) {
+                if ($scope.states[x].code === data.venue.state) {
+                    $scope.selectedState = $scope.states[x];
+                    //$scope.state
                     break;
                 }
             }
         }
-    }
+    };
 
-    var setFields = function(data){
+    var setFields = function (data) {
         setState(data);
         $scope.eventName = data.name;
         $scope.venueName = data.venue.name;
         $scope.date = data.date;
-        $scope.city= data.venue.city;
+        $scope.city = data.venue.city;
     };
 
     var getEventById = function (event) {
-
         if (angular.isDefined(event) && event !== null) {
             EventService.eventById(event).then(function (data) {
                 $scope.event = data;
@@ -55,12 +57,12 @@ angular.module('eventApp').controller('EditEventCtrl', function ($scope, $rootSc
         }
     };
 
-    $scope.handleSubmit = function (){
+    $scope.handleSubmit = function () {
         //send the updated event object to service.
         $scope.event.name = $scope.eventName;
         $scope.event.venue.name = $scope.venueName;
         $scope.event.venue.city = $scope.city;
-        $scope.event.venue.state = ($scope.state !== null ? $scope.state.code: null);
+        $scope.event.venue.state = ($scope.selectedState !== null ? $scope.selectedState.code : null);
         $scope.event.date = $scope.date;
         EventService.update($scope.event);
         $location.path('/');

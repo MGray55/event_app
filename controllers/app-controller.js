@@ -2,7 +2,7 @@
  * Created by Michael_Gray1 on 6/6/2014
  * I am the top level/main controller for the app
  */
-angular.module('eventApp').controller('MainCtrl', function ($rootScope, $scope, EventService, $location, $routeParams) {
+angular.module('eventApp').controller('MainCtrl', function ($scope, EventService, $location, $routeParams) {
     "use strict";
 
     $scope.busy = false;
@@ -47,21 +47,21 @@ angular.module('eventApp').controller('MainCtrl', function ($rootScope, $scope, 
     var getCurrentTab = function () {
         var id = parseInt($routeParams.name);
         switch (id) {
-            case 0:
-                $scope.currentTab = 'all.html';
-                break;
+        case 0:
+            $scope.currentTab = 'all.html';
+            break;
 
-            case 1:
-                $scope.currentTab = 'upcoming.html';
-                break;
+        case 1:
+            $scope.currentTab = 'upcoming.html';
+            break;
 
-            case 2:
-                $scope.currentTab = 'local.html';
-                break;
+        case 2:
+            $scope.currentTab = 'local.html';
+            break;
 
-            default:
-                $scope.currentTab = $scope.currentTab;
-                break;
+        default:
+            $scope.currentTab = $scope.currentTab;
+            break;
         }
     };
 

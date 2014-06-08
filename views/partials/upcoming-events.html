@@ -1,8 +1,15 @@
 <div id="viewTwo" ng-controller="UpcomingEventsCtrl">
     <h1 class="centerOnTablet">Upcoming Events</h1>
 
-    <div class="gridStyle" ng-grid="gridOptions">
+
+    <div class="page" ng-show="noResultsMessage">
+
+        <div class="errorBox medium"
+             style="padding-top: 7px; padding-bottom: 7px;" ng-hide='!noResultsMessage' ng-bind='noResultsMessage'></div>
     </div>
+
+
+    <div class="gridStyle" ng-grid="gridOptions"></div>
 
     <ul class="loadAnimation"
         ng-if="busy"

@@ -491,3 +491,6 @@ button.grey:active {
     color: #e86d1f;
     text-transform: none;
 }
+.midfg {
+    color: #777777;
+}

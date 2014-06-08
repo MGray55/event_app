@@ -1,8 +1,8 @@
 /**
  * Created by Michael_Gray1 on 6/6/2014
- * I am the top level/main controller for the app
+ * I am the parent controller for the cities repeater
  */
-angular.module('eventApp').controller('CitiesCtrl', function ($rootScope, $scope, EventService, $location, $log, $routeParams) {
+angular.module('eventApp').controller('CitiesCtrl', function ($rootScope, $scope, EventService) {
     "use strict";
 
     $scope.cities = {};
@@ -10,7 +10,6 @@ angular.module('eventApp').controller('CitiesCtrl', function ($rootScope, $scope
     $scope.events = {};
 
     $scope.gridOptions = {
-        //data: $scope.cities,
         data: 'cities',
         afterSelectionChange: function (theRow, evt) {
             $scope.selectedEvent = theRow.entity.id;
@@ -33,7 +32,7 @@ angular.module('eventApp').controller('CitiesCtrl', function ($rootScope, $scope
                 $scope.cities = null;
                 $scope.busy = false;
             }
-        )
+        );
     };
 
     var initialize = function () {

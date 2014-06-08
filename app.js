@@ -1,4 +1,4 @@
-var app = angular.module('eventApp', ['ngRoute', 'ngGrid']);
+var app = angular.module('eventApp', ['ngRoute', 'ngGrid', 'ui.bootstrap']);
 /**
  * Configure routes here:
  */

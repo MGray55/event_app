@@ -24,7 +24,6 @@
             <div class="page searchFeeFreeWrapper" style="margin-bottom: 0px">
                 <label>Date</label>
                 <input type="search" style="text-transform: capitalize;"
-                       ng-model="date"
                        ng-value="event.date"></input>
             </div>
 
@@ -41,20 +40,17 @@
                        ng-model="city"
                        ng-value="event.venue.city"></input>
             </div>
-
-            <!--https://github.com/angular-ui/bootstrap/tree/master/src/datepicker-->
             <!--http://www.geobytes.com/free-ajax-cities-jsonp-api.htm-->
 
-            <div class="page searchFeeFreeWrapper" ng-if="!hideDemoFields">
-                <h3 class="centerOnTablet">
-                    For filter demo only - start typing a state
-                    here</h3>
+            <div class="page searchFeeFreeWrapper" ng-show="!hideDemoFields">
+                <h3 class="centerOnTablet">For filter demo only - start typing a state here</h3>
+                <div>(Demonstrates an alternative to a select box for use on mobile devices)</div>
 
                 <label>State</label>
                 <input type="search" ng-model="state.desc" style="text-transform: capitalize;"></input>
             </div>
 
-            <div ng-show="noFilteredResults" ng-class='clearSearchStyle()'>
+            <div ng-show="noFilteredResults">
                 <h1 class="midfg medium nocase centerOnTablet">No Matches</h1>
                 <br/>
                 <a ng-click='clearSearch()'>
@@ -62,14 +58,14 @@
                 </a>
             </div>
 
-            <h1 class="centerOnTablet" ng-if="!hideDemoFields">Select a state</h1>
-
-
-            <select ng-model="state" ng-options="state.desc for state in states">
+            <!-- Combo box display of states -->
+            <select ng-model="selectedState"
+                    ng-options="state.desc for state in states">
             </select>
             <br/>
+            <br/>
 
-            <div style="padding-bottom: 56px;" ng-if="!hideDemoFields">
+            <div ng-if="!hideDemoFields">
                 <div ng-repeat="state in states | filter:state"
                      ng-click="stateSelected(state)"
                      ng-hide="noFilteredResults">

@@ -11,6 +11,8 @@ angular.module('eventApp').controller('UpcomingEventsCtrl', function ($scope, Ev
     $scope.busy = false;
     $scope.selectedEvent = null;
 
+    $scope.noResultsMessage = null;
+
     $scope.gridOptions = {
         data: 'myData',
         afterSelectionChange: function (theRow, evt) {
@@ -34,6 +36,9 @@ angular.module('eventApp').controller('UpcomingEventsCtrl', function ($scope, Ev
         EventService.upcomingEvents().then(function (data) {
             $scope.myData = data;
             $scope.busy = false;
+            if (data === null || data.length === 0) {
+                $scope.noResultsMessage = 'Sorry, no upcoming events right now';
+            }
         }, function (err) {
             $scope.myData = null;
             $scope.busy = false;

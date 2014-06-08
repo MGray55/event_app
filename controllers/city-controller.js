@@ -1,8 +1,8 @@
 /**
  * Created by Michael_Gray1 on 6/6/2014
- * I am the top level/main controller for the app
+ * I am the controller for each city grid
  */
-angular.module('eventApp').controller('CityCtrl', function ($rootScope, $scope, EventService, $location, $log, $routeParams) {
+angular.module('eventApp').controller('CityCtrl', function ($rootScope, $scope) {
     "use strict";
 
 

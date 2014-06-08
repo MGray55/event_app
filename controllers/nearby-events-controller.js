@@ -11,7 +11,7 @@
  * - sort events by distance.
  * - display closest events
  */
-angular.module('eventApp').controller('NearbyEventsCtrl', function ($scope, EventService, LocationService) {
+angular.module('eventApp').controller('NearbyEventsCtrl', function ($scope, LocationService) {
     "use strict";
 
     $scope.busy = false;
@@ -120,7 +120,7 @@ angular.module('eventApp').controller('NearbyEventsCtrl', function ($scope, Even
                 //found, so they need to enter a search location.
                 $scope.errorMessage = "We couldn't determine your location. Please enter a zip code";
             }
-        )
+        );
     };
 
     /**
