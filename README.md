@@ -9,6 +9,10 @@ Purpose: Demo app based on the following wirefames:
 	 
 http://app.mockflow.com/view/bd9d29995b2e320c0ac0d1f5edb15a39
 
+URL
+--------------
+A working sample of this app can be found at:
+	http://www.chubtonepickups.com/event_app
 
 Notes:
 --------------
@@ -35,8 +39,3 @@ In all honestly, I was pleasantly surprised that ng-grid was powerful and easy t
 
 This was also created in JetBrain's WebStorm8 IDE.
 I have checked in the project files for WebStorm so it can be easily imported into the same editor for viewing.
-
-URL
---------------
-A working sample of this app can be found at:
-	http://www.chubtonepickups.com/event_app
