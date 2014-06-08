@@ -1,0 +1,13 @@
+<div ng-controller="CitiesCtrl" xmlns="http://www.w3.org/1999/html">
+    <div ng-repeat="city in cities">
+        <h3>{{city.city}}</h3>
+
+        <div class="gridStyleSmall"
+             ng-controller="CityCtrl"
+             ng-grid="gridOptions"
+             ng-bind="data(city)">
+
+        </div>
+
+    </div>
+</div>

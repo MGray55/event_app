@@ -9,6 +9,10 @@ app.config(function($routeProvider){
             templateUrl: 'views/main.html',
             controller: 'MainCtrl'
         }).
+        when('/:name', {
+            templateUrl: 'views/main.html',
+            controller: 'MainCtrl'
+        }).
        when('/edit/:name', {
             templateUrl: 'views/event_form.html',
             controller: 'EditEventCtrl'

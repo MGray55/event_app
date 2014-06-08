@@ -11,7 +11,7 @@
  * - sort events by distance.
  * - display closest events
  */
-angular.module('eventApp').controller('NearbyEventsCtrl', function($scope, EventService, LocationService) {
+angular.module('eventApp').controller('NearbyEventsCtrl', function ($scope, EventService, LocationService) {
     "use strict";
 
     $scope.busy = false;
@@ -23,7 +23,7 @@ angular.module('eventApp').controller('NearbyEventsCtrl', function($scope, Event
     $scope.minZipLength = 5;
     $scope.zipCode = null;
     $scope.isZipCodeValid = false;
-    $scope.showErrorMessage = false;
+    $scope.errorMessage = null;
 
     $scope.gridOptions = {
         data: 'myData',
@@ -43,7 +43,7 @@ angular.module('eventApp').controller('NearbyEventsCtrl', function($scope, Event
     /**
      * @returns true if user input of zip code is valid
      */
-    $scope.getZipButtonEnabled = function() {
+    $scope.getZipButtonEnabled = function () {
         var returnValue = true;
         if ($scope.busy === true || !$scope.isZipCodeValid) {
             returnValue = false;
@@ -55,7 +55,7 @@ angular.module('eventApp').controller('NearbyEventsCtrl', function($scope, Event
      *  Changes depending if the button is enabled or not
      * @returns String of less styles
      */
-    $scope.getZipButtonStyle = function() {
+    $scope.getZipButtonStyle = function () {
         var returnValue = "gray mapSearch noshow";
         if ($scope.getZipButtonEnabled() === true) {
             returnValue = "green mapSearch noshow";
@@ -71,7 +71,7 @@ angular.module('eventApp').controller('NearbyEventsCtrl', function($scope, Event
      * @param zip  - Postal code as a string or number
      * Expected is a string from UI.
      */
-    $scope.validateZip = function(zip) {
+    $scope.validateZip = function (zip) {
         $scope.isZipCodeValid = false;
         if (angular.isDefined(zip) && zip !== null) {
             if (angular.isString(zip)) {
@@ -90,43 +90,53 @@ angular.module('eventApp').controller('NearbyEventsCtrl', function($scope, Event
     var getNearbyEvents = function (location) {
         $scope.busy = true;
         LocationService.getNearbyEvents(location).then(
-            function(data){
+            function (data) {
                 $scope.myData = data;
                 $scope.busy = false;
             },
-            function(err){
+            function (err) {
                 $scope.myData = null;
                 $scope.busy = false;
             }
         );
     };
 
-    $scope.searchByZip = function (zip){
-        getNearbyEvents (zip);
-    };
-
     /**
      * This will attempt to get the user's location
      * User can also enter a zip code to search
      */
-    var getCurrentLocation  = function()
-    {
+    var getCurrentLocation = function () {
         $scope.busy = true;
         LocationService.getCurrentLocation().then(
-            function(data) {
+            function (data) {
                 $scope.currentLocation = data;
 
                 //Now get events that are close to the user
                 getNearbyEvents(data);
-
-            }, function (err){
+            }, function (err) {
                 $scope.currentLocation = null;
                 $scope.busy = false;
-
                 //Tell the user their location could not be
                 //found, so they need to enter a search location.
+                $scope.errorMessage = "We couldn't determine your location. Please enter a zip code";
             }
         )
+    };
+
+    /**
+     * Zip search button handler
+     * @param zip
+     */
+    $scope.searchByZip = function (zip) {
+        getNearbyEvents(zip);
+    };
+
+    /**
+     * Current locations search button handler
+     * @param zip
+     */
+    $scope.searchByMyLocation = function () {
+        getCurrentLocation();
     };
 
     var initialize = function () {

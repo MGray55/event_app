@@ -1,7 +1,7 @@
 /**
  * Created by Michael_Gray1 on 6/6/2014.
  */
-angular.module('eventApp').controller('EditEventCtrl', function($scope, $rootScope, EventService, $location, $log, $routeParams, StatesService) {
+angular.module('eventApp').controller('EditEventCtrl', function ($scope, $rootScope, EventService, $location, $log, $routeParams, StatesService) {
     "use strict";
 
     $scope.header_title = 'Edit Event (click to go back)';
@@ -11,8 +11,7 @@ angular.module('eventApp').controller('EditEventCtrl', function($scope, $rootSco
 
     var id = null;
 
-    $scope.handleEditSaveClick = function ()
-    {
+    $scope.handleEditSaveClick = function () {
 
         //Gather the details from edit,
 
@@ -23,16 +22,16 @@ angular.module('eventApp').controller('EditEventCtrl', function($scope, $rootSco
         //On error display an error message to user
     };
 
-    var getEventById = function (event){
+    var getEventById = function (event) {
 
-        if(angular.isDefined(event) && event !== null){
-               EventService.eventById(event).then(function (data) {
-                   $scope.event = data;
-                   $scope.busy = false;
-               }, function (err) {
-                   $scope.event = null;
-                   $scope.busy = false;
-               });
+        if (angular.isDefined(event) && event !== null) {
+            EventService.eventById(event).then(function (data) {
+                $scope.event = data;
+                $scope.busy = false;
+            }, function (err) {
+                $scope.event = null;
+                $scope.busy = false;
+            });
         }
     };
 
@@ -43,7 +42,7 @@ angular.module('eventApp').controller('EditEventCtrl', function($scope, $rootSco
     };
 
     var loadStates = function () {
-        if($scope.states === null){
+        if ($scope.states === null) {
             $scope.busy = true;
             StatesService.getStates().then(function (data) {
                     $scope.busy = false;
@@ -59,8 +58,7 @@ angular.module('eventApp').controller('EditEventCtrl', function($scope, $rootSco
     var initialize = function () {
         //Get the selected event id from the route params
         id = $routeParams.name;
-        if(angular.isDefined(id) && id !== null)
-        {
+        if (angular.isDefined(id) && id !== null) {
             getEventById(id);
         }
         loadStates();

@@ -1,32 +1,42 @@
 <div id="viewThree" ng-controller="NearbyEventsCtrl">
-    <h1>Local Events</h1>
-    <h3 ng-if="busy">Finding Events Close To You</h3>
-    <div  ng-if="!busy"></div>
+    <h1 class="centerOnTablet">Local Events</h1>
+
+    <h3 ng-if="busy" class="centerOnTablet">Finding Events Close To You</h3>
+
+    <div ng-if="!busy" style="height: 30px"></div>
     <div class="gridStyle" ng-grid="gridOptions">
     </div>
 
     <div class="page">
+        <div class="pagenone">
 
-        <div ng-show="showErrorMessage">
-            <span class="errorBox">{{ errorMessage }}</span>
+            <!--USE CURRENT LOCATION -->
+            <button class="orange mapSearch"
+                    ng-click="searchByMyLocation()">Search Using My Current Location
+            </button>
+
+            <!-- Zip Code -->
+            <input maxlength="5" type="tel" id="inputZip" class="inline" ng-model="zipCode" ng-trim="false"
+                   input-transform="integer"
+                   ng-change="validateZip(zipCode)"></input>
+            <br/>
+
+            <div ng-if="errorMessage">
+                <span class="errorBox">{{ errorMessage }}</span>
+            </div>
+
+            <br/>
+            <button ng-class="getZipButtonStyle()"
+                    ng-enabled="getZipButtonEnabled()"
+                    ng-click="searchByZip(zipCode)"
+                    ngMinlength="{minZipLength}"
+                    ngRequired="true" v-copy="btn_zip:location_search">
+                Search Using Zip
+            </button>
         </div>
-
-
-        <!-- Zip Code -->
-        <input maxlength="5" type="tel" id="inputZip" class="inline" ng-model="zipCode" ng-trim="false"
-               input-transform="integer"
-               ng-change="validateZip(zipCode)"></input>
-        <br/>
-        <button ng-class="getZipButtonStyle()"
-                ng-enabled="getZipButtonEnabled()"
-                ng-click="searchByZip(zipCode)"
-                ngMinlength="{minZipLength}"
-                ngRequired="true" v-copy="btn_zip:location_search">
-               Search Using Zip
-        </button>
     </div>
 
-    <ul class="loadAnimationMap"
+    <ul class="loadAnimation"
         ng-if="busy"
         style="position: absolute; top: 70px; left: 380px; z-index:99999">
         <li></li>

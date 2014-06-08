@@ -102,6 +102,20 @@ button {
    margin: 10px 10px 10px 10px;
 }
 
+.gridStyleSmall {
+    border: 1px solid rgb(212,212,212);
+    font-size: 10px;
+    width: 600px;
+    min-height: 80px;
+    /*overflow-x: hidden;*/
+    margin: 10px 10px 10px 10px;
+}
+
+.table-div{display:table}
+.tr-div{display:table-row}
+.td-div{display:table-cell;border:1px solid silver}
+
+
 ul {
     list-style: none;
     padding: 0;
@@ -225,26 +239,7 @@ li {
 }
 
 /* loadAnimation Start */
-.loadAnimationLogin {
-    font-size: 140px;
-    width: 1em;
-    height: 1em;
-    margin: 140px auto;
-    border-radius: 50%;
-    list-style: none;
-    text-align: middle;
-    vertical-align: middle;
-}
-.loadAnimationLogin:before {
-    content: "Logging in...";
-    font-size: 10px;
-    font-family: inherit;
-    position: relative;
-    top: -75px;
-    color: #b0b3b5;
-    text-transform: none;
-}
-.loadAnimationMap {
+.loadAnimation {
     font-size: 140px;
     width: 1em;
     height: 1em;
@@ -273,8 +268,7 @@ li {
     border-top-right-radius: 4px;
     z-index: 19999999;
 }
-.loadAnimation:after,
-loadAnimationMap:after {
+.loadAnimation:after {
     content: "";
     display: block;
     position: fixed;
@@ -285,15 +279,13 @@ loadAnimationMap:after {
     background-color: rgba(255, 255, 255, 0.25);
     z-index: 19999998;
 }
-.loadAnimationMap li,
-.loadAnimationLogin li {
+.loadAnimation li {
     position: absolute;
     width: .15em;
     height: .15em;
     border-radius: 50%;
 }
-.loadAnimationMap li:nth-child(1),
-.loadAnimationLogin li:nth-child(1) {
+.loadAnimation li:nth-child(1) {
     left: 50%;
     top: 0;
     margin: 0 0 0 -0.1em;
@@ -305,8 +297,7 @@ loadAnimationMap:after {
     -webkit-animation: rota 1.13s linear infinite, opa 3.67s ease-in-out infinite alternate;
     animation: rota 1.13s linear infinite, opa 3.67s ease-in-out infinite alternate;
 }
-.loadAnimationMap li:nth-child(2),
-.loadAnimationLogin li:nth-child(2) {
+.loadAnimation li:nth-child(2) {
     top: 50%;
     right: 0;
     margin: -0.1em 0 0 0;
@@ -318,8 +309,7 @@ loadAnimationMap:after {
     -webkit-animation: rota 1.86s linear infinite, opa 4.29s ease-in-out infinite alternate;
     animation: rota 1.86s linear infinite, opa 4.29s ease-in-out infinite alternate;
 }
-.loadAnimationMap li:nth-child(3),
-.loadAnimationLogin li:nth-child(3) {
+.loadAnimation li:nth-child(3) {
     left: 50%;
     bottom: 0;
     margin: 0 0 0 -0.1em;
@@ -331,8 +321,7 @@ loadAnimationMap:after {
     -webkit-animation: rota 1.45s linear infinite, opa 5.12s ease-in-out infinite alternate;
     animation: rota 1.45s linear infinite, opa 5.12s ease-in-out infinite alternate;
 }
-.loadAnimationMap li:nth-child(4),
-.loadAnimationLogin li:nth-child(4) {
+.loadAnimation li:nth-child(4) {
     top: 50%;
     left: 0;
     margin: -0.1em 0 0 0;
@@ -425,3 +414,38 @@ loadAnimationMap:after {
     }
 }
 /* loadAnimation End */
+
+button.orange {
+    background: #f8972b;
+    border: 1px solid #f78b12;
+}
+button.orange:active {
+    background: #f78b12;
+    border: 1px solid #f8972b;
+}
+button.green {
+    background: #5db352;
+    border: 1px solid #52a448;
+}
+button.green:active {
+    background: #52a448;
+    border: 1px solid #5db352;
+}
+button.green:disabled {
+    background: #b0b3b5;
+    border: 1px solid #b0b3b5;
+}
+button.gray,
+button.grey {
+    background: #b0b3b5;
+    border: 1px solid #b0b3b5;
+}
+button.gray:active,
+button.grey:active {
+    background: #b0b3b5;
+    border: 1px solid #b0b3b5;
+}
+.errorBox {
+    color: #e86d1f;
+    text-transform: none;
+}

@@ -1,10 +1,10 @@
-<div ng-controller="AllEventsCtrl">
-    <h1>All Events</h1>
+<div ng-controller="AllEventsCtrl" style="align-content: center">
+    <h1 class="centerOnTablet">All Events</h1>
     <div class="gridStyle" ng-grid="gridOptions">
     </div>
     <button class="green" ng-click="handleAddEvent()">Add A New Event</button>
 
-    <ul class="loadAnimationMap"
+    <ul class="loadAnimation"
         ng-if="busy"
         style="position: absolute; top: 70px; left: 380px; z-index:99999">
         <li></li>

@@ -2,29 +2,10 @@
  * Created by Michael_Gray1 on 6/6/2014
  * I am the top level/main controller for the app
  */
-angular.module('eventApp').controller('MainCtrl', function($rootScope, $scope, EventService, $location, $log, $routeParams) {
+angular.module('eventApp').controller('MainCtrl', function ($rootScope, $scope, EventService, $location, $routeParams) {
     "use strict";
 
     $scope.busy = false;
-
-   /*
-    $scope.editEvent = function ()
-    {
-        if($scope.selectedEvent !== null){
-            //alert('Editing ' + $scope.selectedEvent);
-            if (angular.isDefined($scope.selectedEvent)) {
-                $location.path("/edit/" + $scope.selectedEvent);
-            }
-        }
-    };
-
-    $scope.deleteEvent = function ()
-    {
-        if($scope.selectedEvent !== null){
-            alert('Deleting ' + $scope.selectedEvent);
-        }
-    };
-    */
 
     $scope.tabs = [
         {
@@ -44,22 +25,52 @@ angular.module('eventApp').controller('MainCtrl', function($rootScope, $scope, E
     /** The active tab on load */
     $scope.currentTab = 'all.html';
 
-    $scope.onClickTab = function (tab) {
+    /**
+     * To support deep-linking/bookmarks between tabs
+     * Set the tab param on the URL
+     */
+    $scope.onClickTab = function (tab, index) {
         $scope.currentTab = tab.url;
 
-        //If data no loaded for selected tab, get it now...
+        $location.path("/" + index);
     };
 
     $scope.isActiveTab = function (tabUrl) {
+
         return tabUrl == $scope.currentTab;
     };
 
+    /**
+     * To support deep-linking/bookmarks between tabs
+     * Read the tab param on the URL
+     */
+    var getCurrentTab = function(){
+        var id = parseInt($routeParams.name);
+        switch (id){
+            case 0:
+                $scope.currentTab = 'all.html';
+                break;
+
+            case 1:
+                $scope.currentTab = 'upcoming.html';
+                break;
+
+            case 2:
+                $scope.currentTab = 'local.html';
+                break;
+
+            default:
+                $scope.currentTab = $scope.currentTab;
+                break;
+        }
+    };
 
     var initialize = function () {
-        $scope.busy = false;
+        getCurrentTab();
     };
 
     //Initialize the controller on app load:
     initialize();
+
 
 });

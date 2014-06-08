@@ -35,7 +35,7 @@ angular.module('eventApp').controller('AddEventCtrl', function ($scope, $rootSco
     };
 
     var loadStates = function () {
-        if($scope.states === null){
+        if ($scope.states === null) {
             $scope.busy = true;
             StatesService.getStates().then(function (data) {
                     $scope.busy = false;

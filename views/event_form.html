@@ -41,6 +41,8 @@
 <!--http://www.geobytes.com/free-ajax-cities-jsonp-api.htm-->
 
             <div class="page searchFeeFreeWrapper">
+                <h3 class="centerOnTablet" ng-hide="noFilteredResults">For filter demo only - start typing a state here</h3>
+
                 <label>State</label>
                 <input type="search" ng-model="state.desc" style="text-transform: capitalize;"></input>
             </div>
@@ -53,7 +55,8 @@
                 </a>
             </div>
 
-            <h1 class="title centerOnTablet" ng-hide="noFilteredResults">Select a state</h1>
+            <h1 class="centerOnTablet" ng-hide="noFilteredResults">Select a state</h1>
+
 
             <select ng-model="state" ng-options="state.desc for state in states">
             </select>
