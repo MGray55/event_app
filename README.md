@@ -33,6 +33,9 @@ This was a fun exercise.
 I had not used ng-grid much in the past, and had heard not so great things about it.
 In all honestly, I was pleasantly surprised that ng-grid was powerful and easy to use!
 
+This was also created in JetBrain's WebStorm8 IDE.
+I have checked in the project files for WebStorm so it can be easily imported into the same editor for viewing.
+
 URL
 --------------
 A working sample of this app can be found at:
