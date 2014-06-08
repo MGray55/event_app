@@ -215,21 +215,20 @@ angular.module('eventApp').factory('LocationService', function ($q, EventService
         return $filter('orderBy')(locations, '+distance.value');
     };
 
-    var getClosestEvents = function(locations){
+    var getClosestEvents = function (locations) {
         var returnValue = [];
-        if(locations !== null && angular.isArray(locations) && locations.length > 0){
-            locations =  sortLocationsByDistance(locations);
+        if (locations !== null && angular.isArray(locations) && locations.length > 0) {
+            locations = sortLocationsByDistance(locations);
 
             var distance = locations[0].distance.value;
             returnValue.push(locations[0]);
 
-            for(var x = 1; x < locations.length; x++){
+            for (var x = 1; x < locations.length; x++) {
                 //Look for venues in roughly a 70 mile radius
-                if(locations[x].distance.value <= distance + 120000){
+                if (locations[x].distance.value <= distance + 120000) {
                     returnValue.push(locations[x]);
                 }
-                else
-                {
+                else {
                     //Since array is sorted by distance, no need to continue loop
                     break;
                 }

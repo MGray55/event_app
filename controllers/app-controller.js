@@ -44,9 +44,9 @@ angular.module('eventApp').controller('MainCtrl', function ($rootScope, $scope, 
      * To support deep-linking/bookmarks between tabs
      * Read the tab param on the URL
      */
-    var getCurrentTab = function(){
+    var getCurrentTab = function () {
         var id = parseInt($routeParams.name);
-        switch (id){
+        switch (id) {
             case 0:
                 $scope.currentTab = 'all.html';
                 break;

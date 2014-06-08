@@ -87,8 +87,7 @@ angular.module('eventApp').service('googleMapService', ['$rootScope', '$q',
                             //d.reject(status);
                             //});
                         }
-                        else
-                        {
+                        else {
                             d.reject(status);
                         }
                     };

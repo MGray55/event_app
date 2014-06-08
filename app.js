@@ -2,7 +2,7 @@ var app = angular.module('eventApp', ['ngRoute', 'ngGrid']);
 /**
  * Configure routes here:
  */
-app.config(function($routeProvider){
+app.config(function ($routeProvider) {
 
     $routeProvider.
         when('/', {
@@ -13,7 +13,7 @@ app.config(function($routeProvider){
             templateUrl: 'views/main.html',
             controller: 'MainCtrl'
         }).
-       when('/edit/:name', {
+        when('/edit/:name', {
             templateUrl: 'views/event_form.html',
             controller: 'EditEventCtrl'
         }).
@@ -25,6 +25,6 @@ app.config(function($routeProvider){
             redirectTo: 'views/not-found.html'
         });
     // enable html5Mode for pushstate ('#'-less URLs)
-   // $locationProvider.html5Mode(true);
-   // $locationProvider.hashPrefix('!');
+    // $locationProvider.html5Mode(true);
+    // $locationProvider.hashPrefix('!');
 });

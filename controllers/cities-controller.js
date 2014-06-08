@@ -22,15 +22,14 @@ angular.module('eventApp').controller('CitiesCtrl', function ($rootScope, $scope
         ]
     };
 
-    var getCities = function ()
-    {
+    var getCities = function () {
         $scope.busy = true;
         EventService.cities().then(
             function (data) {
                 $scope.cities = data;
                 $scope.busy = false;
             },
-            function (err){
+            function (err) {
                 $scope.cities = null;
                 $scope.busy = false;
             }

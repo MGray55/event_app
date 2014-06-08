@@ -8,7 +8,7 @@ angular.module('eventApp').controller('CityCtrl', function ($rootScope, $scope, 
 
     $scope.myData = null;
 
-    $scope.data = function (city){
+    $scope.data = function (city) {
         $scope.myData = city.events;
     };
 
@@ -23,7 +23,6 @@ angular.module('eventApp').controller('CityCtrl', function ($rootScope, $scope, 
             {field: 'venue.name', displayName: 'Venue', width: '200px'}
         ]
     };
-
 
 
 });
