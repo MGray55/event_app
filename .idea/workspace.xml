@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="999b1f13-1246-40ff-b69d-8832b5b01c13" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/add-event-controller.js" afterPath="$PROJECT_DIR$/controllers/add-event-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/all-events-controller.js" afterPath="$PROJECT_DIR$/controllers/all-events-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/app-controller.js" afterPath="$PROJECT_DIR$/controllers/app-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/cities-controller.js" afterPath="$PROJECT_DIR$/controllers/cities-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/cities.html" afterPath="$PROJECT_DIR$/views/partials/cities.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/city-controller.js" afterPath="$PROJECT_DIR$/controllers/city-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/edit-event-controller.js" afterPath="$PROJECT_DIR$/controllers/edit-event-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/event-service.js" afterPath="$PROJECT_DIR$/services/event-service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/event_form.html" afterPath="$PROJECT_DIR$/views/event_form.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/main.html" afterPath="$PROJECT_DIR$/views/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/nearby-events-controller.js" afterPath="$PROJECT_DIR$/controllers/nearby-events-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/upcoming-events-controller.js" afterPath="$PROJECT_DIR$/controllers/upcoming-events-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/upcoming-events.html" afterPath="$PROJECT_DIR$/views/partials/upcoming-events.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="event_app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="nearby-events.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/partials/nearby-events.html">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33271375" vertical-offset="91" max-vertical-offset="780">
-              <caret line="18" column="86" selection-start-line="18" selection-start-column="86" selection-end-line="18" selection-end-column="86" />
+            <state vertical-scroll-proportion="0.5791583" vertical-offset="416" max-vertical-offset="915">
+              <caret line="47" column="15" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -77,7 +61,6 @@
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/views/event_form.html" />
         <option value="$PROJECT_DIR$/services/event-service.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/main.html" />
         <option value="$PROJECT_DIR$/views/partials/cities.html" />
@@ -90,6 +73,7 @@
         <option value="$PROJECT_DIR$/controllers/edit-event-controller.js" />
         <option value="$PROJECT_DIR$/controllers/add-event-controller.js" />
         <option value="$PROJECT_DIR$/controllers/nearby-events-controller.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -141,66 +125,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="event_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="event_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="event_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="event_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="event_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="event_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="event_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="event_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="event_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -658,14 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="1125">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="631">
@@ -700,7 +616,7 @@
         <state vertical-scroll-proportion="0.530303" vertical-offset="0" max-vertical-offset="594">
           <caret line="21" column="87" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -771,8 +687,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/nearby-events.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33271375" vertical-offset="91" max-vertical-offset="780">
-          <caret line="18" column="86" selection-start-line="18" selection-start-column="86" selection-end-line="18" selection-end-column="86" />
+        <state vertical-scroll-proportion="0.55576205" vertical-offset="91" max-vertical-offset="780">
+          <caret line="26" column="115" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5791583" vertical-offset="416" max-vertical-offset="915">
+          <caret line="47" column="15" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
           <folding />
         </state>
       </provider>
