@@ -1,8 +1,5 @@
-event_app
-=========
-
 EventApp
---------------
+=========
 
 Author: Mike Gray
 
@@ -10,7 +7,7 @@ Date: June 6, 2014
 
 Purpose: Demo app based on the following wirefames:
 	 
-	 http://app.mockflow.com/view/bd9d29995b2e320c0ac0d1f5edb15a39
+http://app.mockflow.com/view/bd9d29995b2e320c0ac0d1f5edb15a39
 
 
 Notes:
@@ -19,6 +16,7 @@ Notes:
 - Data displayed using ng-grid directive:
 	https://angular-ui.github.io/ng-grid/
 - Uses browser navigator to geolocate user (if available)
+- If the user doesn't allow use of current location, feedback is displayed to enter a zip code instead
 - Uses Google API to geolocate event instances
 - Uses $q.all to batch multiple promises
 - Uses Google API to calculate distance from user to events
@@ -26,6 +24,7 @@ Notes:
 - You may notice more use of ng-bind than curly braces. This is a way to prevent flickering and intermittent display of curly braces on mobile devices.
 - Uses Angular routing for bookmarking, deep-liking and navigation.
 - One partial is re-used for adding and editing events, though a different controller is used for each funcitonality
+- On the 'Add New' view, i displayed an example of filtering a list while typing. Though not practical in a desktop browser, it works very well on mobile devices where a combo-box/selector is difficult to use.
 
 
 Other comments:
