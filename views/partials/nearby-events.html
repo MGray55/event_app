@@ -1,0 +1,37 @@
+<div id="viewThree" ng-controller="NearbyEventsCtrl">
+    <h1>Local Events</h1>
+    <h3 ng-if="busy">Finding Events Close To You</h3>
+    <div  ng-if="!busy"></div>
+    <div class="gridStyle" ng-grid="gridOptions">
+    </div>
+
+    <div class="page">
+
+        <div ng-show="showErrorMessage">
+            <span class="errorBox">{{ errorMessage }}</span>
+        </div>
+
+
+        <!-- Zip Code -->
+        <input maxlength="5" type="tel" id="inputZip" class="inline" ng-model="zipCode" ng-trim="false"
+               input-transform="integer"
+               ng-change="validateZip(zipCode)"></input>
+        <br/>
+        <button ng-class="getZipButtonStyle()"
+                ng-enabled="getZipButtonEnabled()"
+                ng-click="searchByZip(zipCode)"
+                ngMinlength="{minZipLength}"
+                ngRequired="true" v-copy="btn_zip:location_search">
+               Search Using Zip
+        </button>
+    </div>
+
+    <ul class="loadAnimationMap"
+        ng-if="busy"
+        style="position: absolute; top: 70px; left: 380px; z-index:99999">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>

@@ -123,11 +123,38 @@ angular.module('eventApp').factory('EventService', function($q) {
   } ];
   
   return {
-    all: function() { 
+    all: function() {
       var deferred = $q.defer();
       setTimeout(function(){ deferred.resolve(events);}, 100);
       return deferred.promise;
     },
+    eventById: function(id) {
+        //Returns a specific object for an id
+        var deferred = $q.defer();
+        var returnValue = null;
+        for (var x = 0; x < events.length; x++){
+             if(id === events[x].id.toString()){
+                 returnValue = events[x];
+                 break;
+             }
+        }
+        setTimeout(function(){ deferred.resolve(returnValue);}, 100);
+        return deferred.promise;
+      },
+      getNextUniqueID: function() {
+          //Gets the next highest unique id available for insertion
+          //Could be part of the add() function, but placed here
+          //for demonstration purposes
+          var deferred = $q.defer();
+          var returnValue = 0;
+          for (var x = 0; x < events.length; x++){
+              if(events[x].id > returnValue){
+                  returnValue = events[x].id + 1;
+              }
+          }
+          setTimeout(function(){ deferred.resolve(returnValue);}, 100);
+          return deferred.promise;
+      },
     
     update: function(event) {
       events.forEach(function(item){
@@ -148,9 +175,6 @@ angular.module('eventApp').factory('EventService', function($q) {
     remove: function(event) {
       events = events.filter(function(item){return item.id !== event.id});
     }
-    
-    
-    
-    
+
   }
 });

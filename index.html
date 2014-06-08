@@ -9,39 +9,46 @@
     <!--<link rel="stylesheet" type="text/css" href="ng-grid.css" /> -->
     <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.css" />
 
-
     <!-- Google Maps API v3 -->
     <!--<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
     <!-- Also load the geometry library from Google to do distance calculations quickly.-->
-    <!--<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;libraries=geometry"></script>-->
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;libraries=geometry"></script>
     <!--
     scriptTag.setAttribute('src', 'http://maps.googleapis.com/maps/api/js?v=3&client=gme-netspend&sensor=true&callback=mapReady');-->
     <!--<script data-require="angular.js@1.2.x" src="http://code.angularjs.org/1.2.8/angular.js" data-semver="1.2.8"></script>
     <script  src="http://code.angularjs.org/1.2.8/angular-route.js"></script>-->
 
     <script data-require="angular.js@1.2.x" src="http://code.angularjs.org/1.2.8/angular.js" data-semver="1.2.8"></script>
-    <script  src="http://code.angularjs.org/1.2.8/angular-route.js"></script>
+    <script src="http://code.angularjs.org/1.2.8/angular-route.js"></script>
     <!--
     <script src="vendor/angular-1.2.8/angular.js"></script>
     <script src="vendor/angular-1.2.8/angular-route.js"></script>
     -->
 
     <script src="app.js"></script>
+    <script src="controllers/app-controller.js"></script>
+    <script src="controllers/all-events-controller.js"></script>
     <script src="controllers/add-event-controller.js"></script>
+    <script src="controllers/edit-event-controller.js"></script>
+    <script src="controllers/upcoming-events-controller.js"></script>
+    <script src="controllers/nearby-events-controller.js"></script>
     <script src="services/event-service.js"></script>
+    <script src="services/location-service.js"></script>
+    <script src="services/google-map-service.js"></script>
+    <script src="services/states-service.js"></script>
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.js"></script>
 
 </head>
 
 
-
+ <!-- Body decalres parent/app controller -->
 <body ng-controller="MainCtrl">
 
-
-
-
+<!-- Div for view changes here -->
 <div ng-view></div>
+
 </body>
 
 </html>

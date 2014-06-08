@@ -3,7 +3,7 @@
         <a href="" ng-click="goBack()">
             <div>
             <span class="backIcon" aria-hidden="true" data-icon="&#xe0cd;">
-                <span class="backIconType" ng-bind="title"></span>
+                <span class="backIconType" ng-bind="header_title"></span>
             </span>
             </div>
             <div class="back"></div>
@@ -12,28 +12,34 @@
 
     <div class='content_canvas'>
         <div class="content centerOnTablet">
-            <h1 class="title">Event Details</h1>
+            <h1 class="title">{{title}}</h1>
 
             <div class="page searchFeeFreeWrapper" style="margin-bottom: 0px">
                 <label>Event Name</label>
-                <input type="search" style="text-transform: capitalize;"></input>
+                <input type="search" style="text-transform: capitalize;" ng-bind="event.name" ng-value="event.name"></input>
             </div>
 
             <div class="page searchFeeFreeWrapper" style="margin-bottom: 0px">
                 <label>Date</label>
-                <input type="search" style="text-transform: capitalize;"></input>
+                <input type="search" style="text-transform: capitalize;"
+                       ng-value="event.date"></input>
             </div>
 
             <div class="page searchFeeFreeWrapper" style="margin-bottom: 0px">
                 <label>Venue</label>
-                <input type="search" style="text-transform: capitalize;"></input>
+                <input type="search" style="text-transform: capitalize;"
+                       ng-value="event.venue.name"></input>
+
             </div>
             <div class="page searchFeeFreeWrapper" style="margin-bottom: 0px">
                 <label>City</label>
-                <input type="search" style="text-transform: capitalize;"></input>
+                <input type="search" style="text-transform: capitalize;"
+                       ng-value="event.venue.city"></input>
             </div>
+
 <!--https://github.com/angular-ui/bootstrap/tree/master/src/datepicker-->
 <!--http://www.geobytes.com/free-ajax-cities-jsonp-api.htm-->
+
             <div class="page searchFeeFreeWrapper">
                 <label>State</label>
                 <input type="search" ng-model="state.desc" style="text-transform: capitalize;"></input>
