@@ -8,18 +8,37 @@ angular.module('eventApp').controller('EditEventCtrl', function ($scope, $rootSc
     $scope.title = 'Edit Event';
     $scope.busy = false;
     $scope.event = null;
+    $scope.venueName = null;
+    $scope.states = null;
+
+    $scope.hideDemoFields = true;
+
+    //Model for text search
+    $scope.state = null;
+    $scope.venueName = null;
+    $scope.eventName = null;
+    $scope.date = null;
+    $scope.city = null;
 
     var id = null;
 
-    $scope.handleEditSaveClick = function () {
+    var setState = function (data){
+        if(data !== null &&  $scope.states !== null){
+            for(var x = 0; x <  $scope.states.length; x++){
+                if ($scope.states[x].code === data.venue.state){
+                    $scope.state = $scope.states[x];
+                    break;
+                }
+            }
+        }
+    }
 
-        //Gather the details from edit,
-
-        //Call service to update data
-
-        //On success, navigate back to main page
-
-        //On error display an error message to user
+    var setFields = function(data){
+        setState(data);
+        $scope.eventName = data.name;
+        $scope.venueName = data.venue.name;
+        $scope.date = data.date;
+        $scope.city= data.venue.city;
     };
 
     var getEventById = function (event) {
@@ -27,12 +46,24 @@ angular.module('eventApp').controller('EditEventCtrl', function ($scope, $rootSc
         if (angular.isDefined(event) && event !== null) {
             EventService.eventById(event).then(function (data) {
                 $scope.event = data;
+                setFields(data);
                 $scope.busy = false;
             }, function (err) {
                 $scope.event = null;
                 $scope.busy = false;
             });
         }
+    };
+
+    $scope.handleSubmit = function (){
+        //send the updated event object to service.
+        $scope.event.name = $scope.eventName;
+        $scope.event.venue.name = $scope.venueName;
+        $scope.event.venue.city = $scope.city;
+        $scope.event.venue.state = ($scope.state !== null ? $scope.state.code: null);
+        $scope.event.date = $scope.date;
+        EventService.update($scope.event);
+        $location.path('/');
     };
 
     /** Clears any state search filters */
@@ -56,13 +87,18 @@ angular.module('eventApp').controller('EditEventCtrl', function ($scope, $rootSc
     };
 
     var initialize = function () {
+        loadStates();
         //Get the selected event id from the route params
         id = $routeParams.name;
         if (angular.isDefined(id) && id !== null) {
             getEventById(id);
         }
-        loadStates();
     };
+
+    $scope.goBack = function () {
+        $location.path('/');
+    };
+
 
     $scope.goBack = function () {
         $location.path('/');
@@ -70,5 +106,4 @@ angular.module('eventApp').controller('EditEventCtrl', function ($scope, $rootSc
 
     //Initialize the controller on app load:
     initialize();
-
 });

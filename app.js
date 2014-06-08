@@ -9,6 +9,10 @@ app.config(function ($routeProvider) {
             templateUrl: 'views/main.html',
             controller: 'MainCtrl'
         }).
+        when('/add', {
+            templateUrl: 'views/event_form.html',
+            controller: 'AddEventCtrl'
+        }).
         when('/:name', {
             templateUrl: 'views/main.html',
             controller: 'MainCtrl'
@@ -16,10 +20,6 @@ app.config(function ($routeProvider) {
         when('/edit/:name', {
             templateUrl: 'views/event_form.html',
             controller: 'EditEventCtrl'
-        }).
-        when('/add', {
-            templateUrl: 'views/event_form.html',
-            controller: 'AddEventCtrl'
         }).
         otherwise({
             redirectTo: 'views/not-found.html'

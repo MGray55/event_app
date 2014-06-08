@@ -20,7 +20,7 @@ angular.module('eventApp').controller('AddEventCtrl', function ($scope, $rootSco
         $scope.noFilteredResults = ($scope.counted === 0);
     });
 
-    /** To get rid of flicker that still appears when using ng-show and ng-hide */
+    /** To get rid of flicker that still appears on mobile when using ng-show and ng-hide */
     $scope.clearSearchStyle = function () {
         if ($scope.noFilteredResults) {
             return "visible";
@@ -32,6 +32,10 @@ angular.module('eventApp').controller('AddEventCtrl', function ($scope, $rootSco
     $scope.clearSearch = function () {
         $scope.state = null;
         $scope.busy = false;
+    };
+
+    $scope.handleSubmit = function (){
+          //create an event object and submit to service.
     };
 
     var loadStates = function () {
@@ -49,7 +53,6 @@ angular.module('eventApp').controller('AddEventCtrl', function ($scope, $rootSco
     };
 
     var initialize = function () {
-        $scope.busy = false;
         loadStates();
     };
 

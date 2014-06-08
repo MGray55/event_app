@@ -238,8 +238,10 @@ angular.module('eventApp').factory('EventService', function ($q, $filter) {
 
         remove: function (event) {
             events = events.filter(function (item) {
-                return item.id !== event.id
+                return item.id !== event;
             });
+
+            return events;
         }
 
     }

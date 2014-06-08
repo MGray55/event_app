@@ -44,6 +44,10 @@ angular.module('eventApp').controller('AllEventsCtrl', function ($scope, EventSe
         }
     };
 
+    $scope.deleteEvent = function () {
+        $scope.myData = EventService.remove($scope.selectedEvent);
+    };
+
 
     /**
      *   Retrieve a list of all events from service
