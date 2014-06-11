@@ -26,6 +26,7 @@ Notes:
 - Uses Google API to calculate distance from user to events
 - Uses Bootstrap for $dialog directive
 - You may notice more use of ng-bind than curly braces. This is a way to prevent flickering and intermittent display of curly braces on mobile devices.
+- You may also notice use of ng-if over ng-show/ng-hide. I like to use this to prevent adding to the DOM unless something is really needed.
 - Uses Angular routing for bookmarking, deep-liking and navigation.
 - One partial is re-used for adding and editing events, though a different controller is used for each funcitonality
 - On the 'Add New' view, i displayed an example of filtering a list while typing. Though not practical in a desktop browser, it works very well on mobile devices where a combo-box/selector is difficult to use.
