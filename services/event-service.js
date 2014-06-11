@@ -178,8 +178,6 @@ angular.module('eventApp').factory('EventService', function ($q, $filter) {
                 var mydate = new Date();
                 var today = Date.parse(mydate);
                 var returnValue = $filter('filter')(data, {date: today}, function (actual, expected) {
-                    console.log(Date.parse(actual));
-                    console.log(Date.parse(expected));
                     return Date.parse(actual) > expected;
                 });
                 deferred.resolve(returnValue);
