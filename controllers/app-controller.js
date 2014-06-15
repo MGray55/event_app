@@ -5,8 +5,10 @@
 angular.module('eventApp').controller('MainCtrl', function ($scope, EventService, $location, $routeParams) {
     "use strict";
 
+    /** Busy flag bound to loading animation */
     $scope.busy = false;
 
+    /** Tab configuration model */
     $scope.tabs = [
         {
             title: 'All Events',

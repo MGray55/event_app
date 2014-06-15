@@ -24,7 +24,6 @@ angular.module('eventApp').controller('UpcomingEventsCtrl', function ($scope, Ev
             {field: 'venue.name', displayName: 'Venue', width: '250px'},
             {field: 'venue.city', displayName: 'City', width: '130px'},
             {field: 'venue.state', displayName: 'State', width: '65px'}
-
         ]
     };
 
@@ -37,11 +36,13 @@ angular.module('eventApp').controller('UpcomingEventsCtrl', function ($scope, Ev
             $scope.myData = data;
             $scope.busy = false;
             if (data === null || data.length === 0) {
+                //No events found for a future date
                 $scope.noResultsMessage = 'Sorry, no upcoming events right now';
             }
         }, function (err) {
             $scope.myData = null;
             $scope.busy = false;
+            $scope.noResultsMessage = "Sorry, we couldn't retrieve events right now. Please try again later.";
         });
     };
 

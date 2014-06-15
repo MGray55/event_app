@@ -14,6 +14,7 @@
 angular.module('eventApp').controller('NearbyEventsCtrl', function ($scope, LocationService) {
     "use strict";
 
+    /** Busy flag bound to loading animation */
     $scope.busy = false;
     $scope.selectedEvent = null;
     $scope.currentLocation = null;
@@ -140,6 +141,7 @@ angular.module('eventApp').controller('NearbyEventsCtrl', function ($scope, Loca
     };
 
     var initialize = function () {
+        //Called on every re-load of this controller
         getCurrentLocation();
     };
 

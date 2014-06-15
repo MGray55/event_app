@@ -236,7 +236,6 @@ angular.module('eventApp').factory('LocationService', function ($q, EventService
         }
 
         return returnValue;
-
     };
 
     /*

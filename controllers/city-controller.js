@@ -12,6 +12,7 @@ angular.module('eventApp').controller('CityCtrl', function ($rootScope, $scope) 
         $scope.myData = city.events;
     };
 
+    /** Each city gets a ng-grid instance and config */
     $scope.gridOptions = {
         data: 'myData',
         afterSelectionChange: function (theRow, evt) {

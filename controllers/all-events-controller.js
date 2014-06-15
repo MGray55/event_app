@@ -8,6 +8,7 @@
 angular.module('eventApp').controller('AllEventsCtrl', function ($scope, EventService, $location, $dialog) {
     "use strict";
 
+    /** Busy flag bound to loading animation */
     $scope.busy = false;
     $scope.selectedEvent = null;
 
@@ -31,11 +32,17 @@ angular.module('eventApp').controller('AllEventsCtrl', function ($scope, EventSe
         ]
     };
 
+    /**
+     * Route the user to the add view
+     */
     $scope.handleAddEvent = function () {
         $location.path("/add");
     };
 
 
+    /**
+     * Route the user to the edit view
+     */
     $scope.editEvent = function () {
         if ($scope.selectedEvent !== null) {
             if (angular.isDefined($scope.selectedEvent)) {
@@ -44,6 +51,10 @@ angular.module('eventApp').controller('AllEventsCtrl', function ($scope, EventSe
         }
     };
 
+    /**
+     * Delete the selected event after a prompt
+     * (Using bootstrap dialog)
+     */
     $scope.deleteEvent = function (row) {
         $scope.selectedEvent = $scope.myData[row.rowIndex];
         var message = ($scope.selectedEvent.name !== null) ? 'Are you sure you want to remove\n' + $scope.selectedEvent.name + '?' : 'Are you sure you want to remove this event?';

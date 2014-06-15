@@ -17,7 +17,7 @@ angular.module('eventApp').service('googleMapService', ['$rootScope', '$q',
          * @returns {*}
          */
         this.getDistanceToLocations = function (origin, events) {
-            var event, destinations = [], x, start, d = $q.defer();
+            var destinations = [], x, start, d = $q.defer();
 
             try {
                 if (angular.isDefined(origin) && angular.isDefined(events) && angular.isArray(events)) {

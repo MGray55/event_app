@@ -38,6 +38,11 @@ angular.module('eventApp').controller('AddEventCtrl', function ($scope, $locatio
         $scope.busy = false;
     };
 
+    /**
+     * Click handler for submit button
+     * Gets the next available ID number, and
+     * requests an insert of a new event
+     */
     $scope.handleSubmit = function () {
         //send a new event object to the service
         var event = {venue: {}};
@@ -59,6 +64,9 @@ angular.module('eventApp').controller('AddEventCtrl', function ($scope, $locatio
         });
     };
 
+    /**
+     * Loads the state list from provider/service
+     */
     var loadStates = function () {
         if ($scope.states === null) {
             $scope.busy = true;
@@ -79,6 +87,7 @@ angular.module('eventApp').controller('AddEventCtrl', function ($scope, $locatio
         loadStates();
     };
 
+    /** Route back to the starting view */
     $scope.goBack = function () {
         $location.path('/');
     };

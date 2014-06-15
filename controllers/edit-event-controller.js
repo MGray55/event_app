@@ -22,20 +22,23 @@ angular.module('eventApp').controller('EditEventCtrl', function ($scope, $rootSc
     $scope.date = null;
     $scope.city = null;
 
-    var id = null;
 
+    /** Sets the selected U.S. state */
     var setState = function (data) {
         if (data !== null && $scope.states !== null) {
             for (var x = 0; x < $scope.states.length; x++) {
                 if ($scope.states[x].code === data.venue.state) {
                     $scope.selectedState = $scope.states[x];
-                    //$scope.state
                     break;
                 }
             }
         }
     };
 
+    /** Updates the state of the model for the view with
+     * the details of the selected event
+     * @param data
+     */
     var setFields = function (data) {
         setState(data);
         $scope.eventName = data.name;
@@ -44,9 +47,14 @@ angular.module('eventApp').controller('EditEventCtrl', function ($scope, $rootSc
         $scope.city = data.venue.city;
     };
 
-    var getEventById = function (event) {
-        if (angular.isDefined(event) && event !== null) {
-            EventService.eventById(event).then(function (data) {
+    /**
+     * After reading the event id from route parameters,
+     * Look up the specific event to get the details
+     * @param event_id - The unique event id
+     */
+    var getEventById = function (event_id) {
+        if (angular.isDefined(event_id) && event_id !== null) {
+            EventService.eventById(event_id).then(function (data) {
                 $scope.event = data;
                 setFields(data);
                 $scope.busy = false;
@@ -57,6 +65,9 @@ angular.module('eventApp').controller('EditEventCtrl', function ($scope, $rootSc
         }
     };
 
+    /**
+     * Click handler to submit edit request
+     */
     $scope.handleSubmit = function () {
         //send the updated event object to service.
         $scope.event.name = $scope.eventName;
@@ -65,6 +76,7 @@ angular.module('eventApp').controller('EditEventCtrl', function ($scope, $rootSc
         $scope.event.venue.state = ($scope.selectedState !== null ? $scope.selectedState.code : null);
         $scope.event.date = $scope.date;
         EventService.update($scope.event);
+        //Go back to refreshed list
         $location.path('/');
     };
 
@@ -74,6 +86,9 @@ angular.module('eventApp').controller('EditEventCtrl', function ($scope, $rootSc
         $scope.busy = false;
     };
 
+    /**
+     * Populate the list of states from service
+     */
     var loadStates = function () {
         if ($scope.states === null) {
             $scope.busy = true;
@@ -91,7 +106,7 @@ angular.module('eventApp').controller('EditEventCtrl', function ($scope, $rootSc
     var initialize = function () {
         loadStates();
         //Get the selected event id from the route params
-        id = $routeParams.name;
+        var id = $routeParams.name;
         if (angular.isDefined(id) && id !== null) {
             getEventById(id);
         }

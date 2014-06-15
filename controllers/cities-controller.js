@@ -21,6 +21,10 @@ angular.module('eventApp').controller('CitiesCtrl', function ($rootScope, $scope
         ]
     };
 
+    /**
+     * Get a list of cities from the provider/service.
+     * This list is dynamic abd changes with additions/deletions
+     * */
     var getCities = function () {
         $scope.busy = true;
         EventService.cities().then(

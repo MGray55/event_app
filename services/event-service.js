@@ -162,6 +162,10 @@ angular.module('eventApp').factory('EventService', function ($q, $filter) {
                         returnValue.push(eventsByCity);
                     }
                 }
+                if (returnValue.length > 0) {
+                    //Sort the array alphabetically
+                    returnValue = $filter('orderBy')(returnValue, 'city');
+                }
                 deferred.resolve(returnValue);
 
             }, function (err) {
@@ -220,7 +224,6 @@ angular.module('eventApp').factory('EventService', function ($q, $filter) {
             }, 100);
             return deferred.promise;
         },
-
         update: function (event) {
             events.forEach(function (item) {
                 if (item.id === event.id) {
@@ -231,11 +234,9 @@ angular.module('eventApp').factory('EventService', function ($q, $filter) {
                 }
             });
         },
-
         add: function (event) {
             events.push(event);
         },
-
         remove: function (event) {
             events = events.filter(function (item) {
                 return item.id !== event;
