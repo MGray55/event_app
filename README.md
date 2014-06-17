@@ -67,7 +67,7 @@ Type:
 
 karma init karma.conf.js
 
-Choose - jasmine, no requirejs, Chrome,  test/**/*Spec,js, no exclusions, and no for watch on change
+Choose - jasmine, no requirejs, Chrome,  test/**/*-spec,js, no exclusions, and no for watch on change
 
 This creates the karma configuration file in the root of your project
 
