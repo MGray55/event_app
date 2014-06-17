@@ -45,17 +45,26 @@ To install Karma support in WebStorm
 Make sure you have the following:
 
 npm install -g karma
+
 npm install -g karma-cli
+
 npm install -g karma-jasmine
+
 npm install -g phantom-js
+
 npm install -g karma-chrome-launcher
+
 npm install -g karma-coverage
+
 npm install -g karma-junit-reporter
+
 npm install -g angularjs
 
+To create a new karma configuration file:
 Open View > Tool Windows > Terminal
 
 Type:
+
 karma init karma.conf.js
 
 Choose - jasmine, no requirejs, Chrome,  test/**/*Spec,js, no exclusions, and no for watch on change
