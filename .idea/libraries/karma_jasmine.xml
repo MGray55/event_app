@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="karma-jasmine" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$USER_HOME$/.npm/karma-jasmine/0.1.5/package/lib/adapter.js" />
+        <item url="file://$USER_HOME$/.npm/karma-jasmine/0.1.5/package/lib/index.js" />
+        <item url="file://$USER_HOME$/.npm/karma-jasmine/0.1.5/package/lib/jasmine.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$USER_HOME$/.npm/karma-jasmine/0.1.5/package/lib/adapter.js" />
+      <root url="file://$USER_HOME$/.npm/karma-jasmine/0.1.5/package/lib/index.js" />
+      <root url="file://$USER_HOME$/.npm/karma-jasmine/0.1.5/package/lib/jasmine.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

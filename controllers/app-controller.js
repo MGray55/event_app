@@ -39,7 +39,7 @@ angular.module('eventApp').controller('MainCtrl', function ($scope, EventService
 
     $scope.isActiveTab = function (tabUrl) {
 
-        return tabUrl == $scope.currentTab;
+        return tabUrl === $scope.currentTab;
     };
 
     /**
